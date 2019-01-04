@@ -17,18 +17,18 @@ htlm= '<h1>Testing</h1>'
 
 
 mailjet = Client(auth=(API_KEY, API_SECRET), version='v3')
-data = {
+email_data = {
   'FromEmail': 'no-reply@groupeseb.com',
   'FromName': 'Mailjet Pilot',
   'Subject': 'Your email flight plan!',
   'Text-part': 'Dear passenger, welcome to Mailjet! May the delivery force be with you!',
-  'Html-part': '<h1>Testing</h1>,
+  'Html-part': '<h1>Testing</h1>',
   'Recipients': [
                 {
-                        "Email": "subhadip.banerjee@edifixio.com"
+                        "Email": "humblebeastleo@gmail.com"
                 }
         ]
 }
-result = mailjet.send.create(data=data)
+result = mailjet.send.create(data=email_data)
 if result.status_code == 200:
 	checkAndBreak(subject)
